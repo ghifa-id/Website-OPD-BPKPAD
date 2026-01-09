@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+    /* Jika belum ada di Tailwind config, definisikan font-inter */
+.font-inter {
+        font-family: 'Inter', sans-serif;
+    }
+
+.animate-fade-in-up {
+  opacity: 0; /* awalnya sembunyi */
+}
+
+.animate-fade-in-up.start-animation {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.main-navbar .container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+/* Kiri dan kanan ukurannya menyesuaikan konten */
+.main-menu-left,
+.main-menu-right {
+  flex: 0 0 auto;
+}
+
+/* Menu tengah mengisi ruang dan menempatkan menu di tengah */
+.main-menu-center {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+/* Mengatur tampilan list menu jadi horizontal */
+.main-menu-center .main-menu-list {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 25px;
+}
+
+/* Dropdown bisa tetap seperti sekarang */
+
+/* Mobile button tetap di kanan */
+.mobile-menu-button {
+  cursor: pointer;
+}
+
+/* Responsive (contoh) */
+@media (max-width: 768px) {
+  .main-navbar .container-flex {
+    flex-wrap: wrap;
+  }
+
+  .main-menu-center {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .main-menu-left,
+  .main-menu-right {
+    flex: 1 1 auto;
+  }
+}
+
+ /* Buat class custom untuk efek underline animasi */
+ .underline-animate {
+  position: relative;
+}
+
+.underline-animate::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #22c55e;
+  /* hijau (green-500) */
+  transition: width 0.3s ease;
+}
+
+.underline-animate:hover::after {
+  width: 100%;
+}
+
+    @keyframes fadeSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-slide-up {
+        opacity: 0;
+        animation: fadeSlideUp 1s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+    .blog-section,
+.portfolio-section,
+.py-5 {
+  margin-top: 20px;   /* kurangi margin atas */
+  margin-bottom: 10px; /* kurangi margin bawah */
+  padding-top: 10px;  /* kurangi padding atas */
+  padding-bottom: 10px; /* kurangi padding bawah */
+}
+    .curved {
+      background-color: #fafafa;
+      border-radius: 200vh 200vh 0 0 / 20vh 20vh 0 0;
+      -moz-border-radius: 200vh 200vh 0 0 / 20vh 20vh 0 0;
+      -webkit-border-radius: 200vh 200vh 0 0 / 20vh 20vh 0 0;
+      height: 100px;
+      margin-left: -10%;
+      margin-right: 10%;
+      margin-top: -90px;
+      overflow: hidden;
+      position: relative;
+      width: 120%;
+      z-index: 10;
+  }
+
+  /* underline-animate.css */
+
+/* Reset default a */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4caf50; /* garis underline warna hijau */
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #4caf50; /* warna teks saat hover/active */
+}
+.nav-link.no-underline::after {
+  display: none !important;
+}
+
+.box.box-info{
+  border-top-color :#4caf50;
+}
+
+.box{
+ position: relative;
+ border-radius: 3px;
+ background: #ffff;
+ border-top: 3px solid #d2d6de;
+ margin-bottom: 20px;
+ width: 100%;
+ box-shadow: 0 1px 1px rgba(0,0,0, 0.1); 
+}
+
+#dataTable {
+  border: 1.5px solid black;
+}
+
+#dataTable th,
+#dataTable td {
+  border: 1.5px solid black !important;
+  font-size: 0.75rem;
+  color: black !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.tab-button {
+  background: none;
+  color: #003b49;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.875rem; /* text-sm */
+}
+
+
+.tab-underline {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: green;
+  transition: width 0.3s ease;
+}
+
+.tab-button:hover .tab-underline {
+  width: 100%;
+}
+
+.btn-berita {
+  border: 1px solid #008444;
+    background-color: white;
+    color: #008444;
+    font: 14px;
+    border-radius: 10px;
+    font-weight: 550;
+    font-family: sans-serif;
+    padding: 9px 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-berita:hover {
+  background-color: #003b49;
+  color: white;
+  border: 1px solid #003b49;
+}
+
+.icon-arrow {
+  stroke: white;
+  transition: transform 0.3s ease;
+}
+
+.btn-berita:hover .icon-arrow {
+  transform: translateX(4px);
+}
+
+.berita-box {
+  background-color: #fff;
+  border: 1.5px solid #ccc; /* garis agak tebal dan terang */
+  border-radius: 12px; /* radius lebih besar */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* shadow lebih tegas */
+  padding: 1.5rem;
+}
+
+
+.nav-tabs .nav-link {
+  color: #003b49 !important;       
+  font-weight: normal !important; 
+  transition: all 0.1s ease;
+}
+
+.nav-tabs .nav-link.active {
+  font-weight: bold !important; 
+}
+
+
+.btn-lihat-semua {
+  border: 1px solid #008444;
+  background-color: white;
+  color: #008444;
+  font-size: 14px; 
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: sans-serif;
+  padding: 8px 14px; 
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-lihat-semua:hover {
+  background-color: #003b49;
+  color: white;
+  border: 1px solid #003b49;
+}
+
+
+.hr-connector {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0 16px;
+}
+
+.custom-card-glass {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.457);
+  margin-bottom: 1.5rem; /* mb-4 */
+}
+
+.service-details-title {
+    margin-bottom: 0.1rem; 
+}
+
+.service-details-content-box .mb-3 {
+    margin-top: 0.3rem; 
+    margin-bottom: 0.8rem; 
+}
+
+.content-box-glass {
+  background: rgba(255, 255, 255, 0.15); /* transparan putih */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.content-box-glass,
+.content-box-glass * {
+  color: #2c2c2c !important;
+}
+
+.ppid {
+  border: 1.5px solid #2dcd7c;
+  background-color: #f4fcf9;
+  padding: 18px 24px;
+  border-radius: 12px;
+  max-width: 720px;
+  margin: 0 auto 40px auto;
+  font-size: 16px;
+  color: #1a1a1a;
+  text-align: center;
+  /* box-shadow dihilangkan */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+}
+
+/*  */
+.album-cover {
+  transition: transform 0.2s ease;
+}
+
+.album-cover:hover {
+  transform: scale(1.05);
+}
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.75rem;
+}
+
+.table td {
+  padding: 1rem 0.75rem;
+  vertical-align: middle;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
